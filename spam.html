@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="./urf.css">
+    <title>Your Nearest Facilities</title>
+</head>
+
+<body>
+    <div class="login-container">
+        <h2>Nearest E-Waste Facility Locator</h2>
+        <div class="search-container">
+            <input list="options" class="mt-5 search-bar" id="searchInput" placeholder="Hyderabad">
+        </div>
+            <datalist id="options">
+                <option value="Re Sustainability and Recycling Pvt Limited - E Waste Recycling Facility">25/A, Hardware Park, Srisailam Highway Road Kurmaguda, near
+                    International Airport, Hyderabad, Kurmalguda, Telangana 500005
+                </option>
+                <option value="ELifecycle Management Pvt Ltd (ELIMA)">502 , 5th floor , Siri Sampadha Arcade III, near Andhra Bank, Madhura
+                    Nagar Colony, Gachibowli, Hyderabad, Telangana 500089
+                </option>
+                <option value="S D Recycling Process Industries E Waste">Near Income Tex Tower, AC Guards, Lakdikapul, Hyderabad, Telangana
+                    500004
+                </option>
+                <option value="Pure Earth Recyclers Pvt. Ltd">Plot No, 167c, opp. JNTU, Addagutta Society, Western Hills, Jal Vayu
+                    Vihar, Kukatpally, Hyderabad, Telangana 500072
+                </option>
+                <option value="Zolopik">1, H.No: 3-7/38, Khaswa Enclave, Marva Road, Narsingi, Hyderabad,
+                    Telangana 500075
+                </option>
+                <option value="E waste recycling Telangana">10-134/A Chanda nagar vimikunta, near church, Shubodaya Colony, Bandam
+                    Kommu, Chanda Nagar, Serilingampalle (M), Ramachandrapuram, Telangana 500050
+                </option>
+                <option value="E waste and old scrap buyer">Bapughat langer house, Bapu Nagar, Golconda Fort, Hyderabad, Telangana
+                    500008
+                </option>
+                <option value="Electronic Scrap Buyers In Hyderabad">2-42/1, Raghavendra Colony, Kothaguda, Hyderabad, Telangana 500084
+                </option>
+                <option value="E WASTE RECYCLING">2-41/5/1, Ghousia Masjid Rd, Vinayaka Nagar, HITEC City, Khanammet,
+                    Hyderabad, Telangana 500084
+                </option>
+                <option value="E-Waste Recycling process company">GPRA CUMPUS, Indira Nagar, Gachibowli, Hyderabad, Telangana 500032
+                </option>
+                <option value="E-WASTE EXCHANGE">IIITH Himalaya, Road, Gachibowli, Hyderabad, Telangana 500032
+                </option>
+            </datalist>
+            <button class="btn mt-4 btn-primary" onclick="updateIframe()">Search</button>
+        </div>
+    <div>
+        <div class="iframe-container">
+            <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1oTxMdpCaVx8UohMB47_hIIPgGicyIsk&ehbc=2E312F&noprof=1"
+                id="resultIframe" width="800" height="600"></iframe>
+        </div>
+    </div>
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function updateIframe() {
+            var selectedOption = document.getElementById('searchInput').value;
+            var newPageUrl = getIframeUrl(selectedOption);
+            document.getElementById('resultIframe').src = newPageUrl;
+        }
+
+        function getIframeUrl(option) {
+            var urlMap = {
+                'Re Sustainability and Recycling Pvt Limited - E Waste Recycling Facility':'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3810.5032103472727!2d78.4825846!3d17.2428731!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcba3561570ebc3%3A0x501792f65decf070!2sRe%20Sustainability%20and%20Recycling%20Pvt%20Limited%20-%20E%20Waste%20Recycling%20Facility!5e0!3m2!1sen!2sin!4v1700285172599!5m2!1sen!2sin',
+                'E waste recycling Telangana':'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3805.094324314055!2d78.3225064!3d17.5030102!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb937f892d8d1f%3A0x8d456a4b22df2836!2sE%20waste%20recycling%20Telangana%7C%20scrap%20metal%20dealer!5e0!3m2!1sen!2sin!4v1700284436120!5m2!1sen!2sin',
+                'Pure Earth Recyclers Pvt. Ltd' :'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3805.1279200286876!2d78.39717499999999!3d17.501406000000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb91edd1bc22fd%3A0x6b90a435b8576aaa!2sPure%20Earth%20Recyclers%20Pvt.%20Ltd%20%7C%20Enterprise%20ITAD%20%7C%20Govt.%20Authorized%20E-waste%20Recycler%20and%20Refurbisher.!5e0!3m2!1sen!2sin!4v1700284466843!5m2!1sen!2sin',
+                'Electronic Scrap Buyers In Hyderabad':'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3805.8399396480704!2d78.3629735!3d17.4673734!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb93206c3f3d53%3A0xcbe445562bc4b1e3!2sElectronic%20Scrap%20Buyers%20In%20Hyderabad!5e0!3m2!1sen!2sin!4v1700284492269!5m2!1sen!2sin',
+                'E WASTE RECYCLING':'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3805.912132306558!2d78.3762727!3d17.463919199999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb933b79b65863%3A0x8ddd4882dd46e9e9!2sE%20WASTE%20RECYCLING!5e0!3m2!1sen!2sin!4v1700284519140!5m2!1sen!2sin',
+                'E-WASTE EXCHANGE':'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.2951495891953!2d78.34906509999999!3d17.4455819!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb93a2db6fffff%3A0x982f8997a998b708!2sE-WASTE%20EXCHANGE!5e0!3m2!1sen!2sin!4v1700284548575!5m2!1sen!2sin',
+                'E-Waste Recycling process company':'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.4598139851432!2d78.3572135!3d17.437692699999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa43da5119378316b%3A0x2ce582e23d32b0f1!2sE-Waste%20Recycling%20process%20company!5e0!3m2!1sen!2sin!4v1700284571419!5m2!1sen!2sin',
+                'ELifecycle Management Pvt Ltd (ELIMA)':'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.836346995203!2d78.3750828!3d17.419639699999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb956357176821%3A0x2973505b56d2145a!2sELifecycle%20Management%20Pvt%20Ltd%20(ELIMA)!5e0!3m2!1sen!2sin!4v1700284617285!5m2!1sen!2sin',
+                'S D Recycling Process Industries E Waste':'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7614.577012026152!2d78.4574329!3d17.3979368!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb976be5555555%3A0x3077847516f46d09!2sS%20D%20Recycling%20Process%20Industries%20E%20Waste!5e0!3m2!1sen!2sin!4v1700284643242!5m2!1sen!2sin',
+                'Zolopik':'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3807.5362553556165!2d78.3642294!3d17.3860341!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb95a47d28fd7f%3A0x22e4a64faad100a0!2sZolopik!5e0!3m2!1sen!2sin!4v1700284674457!5m2!1sen!2sin',
+                'E waste and old scrap buyer':'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3807.802196729861!2d78.4147902!3d17.3732486!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb97f3b70ddb9b%3A0x9af053b6e29f6ba2!2sE%20waste%20and%20old%20scrap%20buyer!5e0!3m2!1sen!2sin!4v1700284696107!5m2!1sen!2sin',
+            };
+            return urlMap[option] || 'https://www.google.com/maps/d/u/0/embed?mid=1oTxMdpCaVx8UohMB47_hIIPgGicyIsk&ehbc=2E312F&noprof=1';
+        }
+    </script>
+</body>
+
+</html>

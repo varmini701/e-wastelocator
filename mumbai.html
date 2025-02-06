@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="./urf.css">
+    <title>Your Nearest Facilities</title>
+</head>
+
+<body>
+    <div class="login-container">
+        <h2>Nearest E-Waste Facility Locator</h2>
+        <div class="search-container">
+            <input list="options" class="mt-5 search-bar" id="searchInput" placeholder="Mumbai">
+        </div>
+            <datalist id="options">
+                <option value="Master Recycling">Sakinaka Andheri e, Mumbai, Maharashtra 400072
+                </option>
+                <option value="Spas Recycling Pvt Ltd">Unit No.7,Hema Industrial Estate,Sarvodaya Nagar,, MHB Colony Rd, Meghwadi, Indira Nagar, Jogeshwari East, Mumbai, Maharashtra 400060
+                </option>
+                <option value="Regreen Recycling Pvt Ltd">Office No 123, 1st Floor, Bldg No.4, Commercial Complex, Rd Number 7, below Annex Hotel, M.I.D.C, Kondivita, Andheri(E, Mumbai, Maharashtra 400093)
+                </option>
+                <option value="Precyclekaro">Millenium Business Park , Building 5 office 8, Mahape, Navi Mumbai, Maharashtra 700701
+                </option>
+                <option value="WESTERN RECYCLER">SR No. 8/2, Plot No 633, Panvel Rd, Dahisar, Mumbra, Thane, Navi Mumbai, Maharashtra 421204
+                </option>
+                <option value="E-waste E-green recycle">Swatantrya Veer Savarkar, Lokmanya Tilak Nagar, Saki Naka, Mumbai, Maharashtra 400072
+                </option>
+                <option value="RECYCLING FUTURE">plot no 169 At-Bhangarpada,Post-Kundevahall,Tal, Panvel, Navi Mumbai, Maharashtra 410206
+                </option>
+                <option value="The Recycling Company">2D-402 Remi Bizcourt, Off Veera Desai Rd, opposite SUPREME CHAMBERS, near Yash Raj Studios, Andheri, Maharashtra 400053
+                </option>
+                <option value="E-Waste Recycling Company">90 Feet Road Sakinaka, Andheri East, Mumbai, Maharashtra 400072
+                </option>
+                <option value="Recycle Impact">206, Raja Industrial Estate, P.K. Road, Mulund West, Mumbai, Maharashtra 400080
+                </option>
+                
+            </datalist>
+            <button class="btn btn-primary" onclick="updateIframe()">Search</button>
+        </div>
+    <div>
+        <div class="iframe-container">
+            <iframe src="https://www.google.com/maps/d/embed?mid=1-adz6cmfqVFJ94T69ZdCRgy-fPxkBhs&ehbc=2E312F&noprof=1" id="resultIframe" width="800" height="600"></iframe>
+        </div>
+    </div>
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function updateIframe() {
+            var selectedOption = document.getElementById('searchInput').value;
+            var newPageUrl = getIframeUrl(selectedOption);
+            document.getElementById('resultIframe').src = newPageUrl;
+        }
+
+        function getIframeUrl(option) {
+            var urlMap = {
+                'Master Recycling':'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.2612330523193!2d72.8876657!3d19.096192400000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c96c4ce9a8fd%3A0x293bf7897c1b0e4!2sMaster%20Recycling!5e0!3m2!1sen!2sin!4v1700285461732!5m2!1sen!2sin',
+                'ESpas Recycling Pvt Ltd':'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.457351846245!2d72.8624889!3d19.1314475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b7d791f6d6d5%3A0x3bbed3a9524c3625!2sSpas%20Recycling%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1700285895689!5m2!1sen!2sin',
+                'Regreen Recycling Pvt Ltd' :'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.7689145563927!2d72.8718311!3d19.117791!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c98e0cc3501d%3A0xb64a773cb2255d4d!2sRegreen%20Recycling%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1700286204464!5m2!1sen!2sin',
+                'Precyclekaro':'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.921415811415!2d73.0157785!3d19.1111031!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b8edaaaaaaa7%3A0x5b30028e34668f19!2srecyclekaro!5e0!3m2!1sen!2sin!4v1700286469907!5m2!1sen!2sin',
+                'WESTERN RECYCLER':'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.5085416026027!2d73.08211949999999!3d19.085333799999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c1acfe02c995%3A0xff2f65866d526c74!2sWESTERN%20RECYCLER!5e0!3m2!1sen!2sin!4v1700287093166!5m2!1sen!2sin',
+                'E-waste E-green recycle':'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.3253085879064!2d72.889832!3d19.093379599999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c9dd3d3c8747%3A0x306a8649e32d8df3!2sE-waste%20E-green%20recycle%20%E2%99%BB%EF%B8%8F%20Our%20destruction%20or%20path%20is%20our%20responsibility!5e0!3m2!1sen!2sin!4v1700286997253!5m2!1sen!2sin',
+                'RECYCLING FUTURE':'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3773.1488805186755!2d73.0707609!3d18.9690312!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7e8153005a1cd%3A0xbef3cd4ce941ece7!2sRECYCLING%20FUTURE!5e0!3m2!1sen!2sin!4v1700287154416!5m2!1sen!2sin',
+                'The Recycling Company':'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.3849087686126!2d72.8368569!3d19.134621499999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b7a2c38bcc4f%3A0x9f12103bf437fce8!2sThe%20Recycling%20Company!5e0!3m2!1sen!2sin!4v1700287175882!5m2!1sen!2sin',
+                'E-Waste Recycling Company':'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.181633974149!2d72.8919481!3d19.099686100000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d6c5b4384603a03%3A0x28eb9519b50da8e5!2sE-Waste%20Recycling%20Company!5e0!3m2!1sen!2sin!4v1700287198660!5m2!1sen!2sin',
+                'Recycle Impact':'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3768.683926475369!2d72.94274399999999!3d19.165308!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c811b0a35c73%3A0x2d867992db0b539f!2sRecycle%20Impact!5e0!3m2!1sen!2sin!4v1700287215980!5m2!1sen!2sin',
+
+            };
+            return urlMap[option] ;
+        }
+    </script>
+</body>
+
+</html>

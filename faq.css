@@ -1,0 +1,55 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url(http://bms.westportps.org/uploaded/site_files/bms/FAQ.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+
+section {
+    max-width: 800px;
+    margin: 2em auto;
+    padding: 1em;
+    background-color: gainsboro;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 8px;
+    text-align: left;
+}
+.modal-header{
+    font-weight: 800;
+}
+h1{
+    color: white;
+}
+h2 {
+    color: #333;
+    padding-bottom: 20px;
+    font-weight: 700;
+}
+
+p {
+    line-height: 1.6;
+    color: #555;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 1em;
+}
+
+hr {
+    border: 1px solid black;
+    margin: 10px 0;
+}

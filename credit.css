@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Average+Sans&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    min-height: 100vh;
+    flex-direction: column;
+    display: flex;
+    background-color:rgb(208, 163, 109);
+    font-family: 'Average Sans', sans-serif;
+    
+}
+header{
+    background-color: white;
+    padding: 10px 50px;
+    color: rgb(95, 27, 41);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+    font-size: 25px;
+}
+#a{
+    font-size: 20px;
+}
+.text{
+  margin: 50px;
+  margin-right: 120px;
+}
+.main{
+    color: white;
+    display: flex;
+    align-items: center;
+    margin: 80px;
+    margin-bottom: 0px;
+}
+.image{
+  margin-left: 0px;
+  margin-top: 20px;
+  margin-right: 20px;
+  filter:opacity(.8);
+  display: block;
+    margin: 0 auto;
+    text-align: right;
+}
+.image img{
+    border-radius: 10%;
+}
+.row{
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+    align-items: flex-end;
+    gap: 5px;
+}
+.child{
+    color: white;
+    width: 450px;
+    height: 200px;
+    padding: 20px;
+    margin-top: 75px;
+    justify-content: center;
+    align-items: center;
+    background-color:rgb(121, 117, 97);
+}
+h2,h1{
+    margin-bottom: 10px;
+}
+@media screen and (max-width:800px){
+   .row{
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  } 
+ } 
+@media screen and (max-width: 1200px) {
+    .main {
+        flex-direction: column;
+    }
+    .text{
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .child {
+        width: 100%;
+        height: 100%;
+    }
+    .image{
+        display: none;
+      }
+  .text{
+    width:100%;
+    padding:5px;
+  }
+  
+}
+
+
+
+table{
+    width: 300px;
+    margin: auto;
+    margin: 10px;
+}
+table,th,td{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+thead{
+    text-align: left;
+}
+td{
+    text-align: center;
+}
+
+
+
+
+

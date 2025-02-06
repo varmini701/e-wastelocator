@@ -1,0 +1,60 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body{
+    width: 100%;
+}
+
+.child{
+    text-transform: capitalize;
+    background-color: rgb(230, 166, 143);
+    color: rgb(255, 42, 0);
+    padding: 35px;
+    border-radius: 10px;
+    font-size: 1.3rem;
+    margin-top: 35px;
+    display: flex;
+}
+img
+{
+    max-height: 350px;
+    margin-right: 70px;
+}
+.child p{
+    padding-top: 25px;
+    font-size: calc(0.8rem + 0.7vw);
+}
+.profile{
+    display: flex;
+    padding-bottom: 12px;
+}
+.child h3{
+    font-size: calc(1rem + 1vw);
+}
+.parent{
+    min-height: 100vh;
+    border-radius: 10px;
+    padding: 25px;
+
+}
+.five{
+    color: rgb(165, 42, 42);
+    background-color: rgba(0, 206, 209, 0.774);
+}
+.two{
+    background-color: rgba(189, 183, 107, 0.819);
+}
+.four{
+    color: darkmagenta;
+    background-color: rgba(100, 148, 237, 0.912);
+}
+.three{
+    color: black;
+    background-color: gainsboro;
+}
+.one{
+    color: white;
+    background-color: rgba(137, 43, 226, 0.807);
+}

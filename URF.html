@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./urf2.css">
+    <title>Let's Create your account</title>
+</head>
+<body>
+    <div class="login-container">
+    <h2>User Registration Form</h2>
+    <!-- form -->
+    <form action="./home.html" method="POST" id="myForm" onclick="return validateForm()">
+        <!-- username -->
+        <div class="form-group" >
+            <label for="username">First name</label>
+            <input type="text" name="username" id="username" required>
+        
+            <label for="name">Last name</label>
+            <input type="text" name="name" id="name">
+        
+            <label for="email">Email</label>
+            <input type="text" name="email" id="email" required>
+        
+            <label for="password1">Password:</label>
+            <input type="password" id="password1" name="password1" pattern=".{8,}" title="Minimum 8 characters" required>
+            <small class="error" id="passwordError"></small>
+
+            <label for="password2">Confirm Password:</label>
+            <input type="password" id="password2" name="password2" required onkeyup="checkPasswords()">
+            <p id="message"></p>
+
+        </div>
+        <!-- submit button -->
+        <button type="button" onclick="openNewPage()">Register</button>
+    </form>
+    </div>
+    <script>
+        function checkPasswords() {
+            // Get the values from the password fields
+            var password1 = document.getElementById("password1").value;
+            var password2 = document.getElementById("password2").value;
+
+            // Check if the passwords match
+            if (password1 === password2) {
+                document.getElementById("message").innerHTML = "Passwords match!";
+                document.getElementById("message").style.color = "green";
+            } else {
+                document.getElementById("message").innerHTML = "Passwords do not match!";
+                document.getElementById("message").style.color = "red";
+            }
+        }
+        function validateForm() {
+            // Get the password value
+            var password = document.getElementById("password1").value;
+
+            // Check minimum length
+            if (password.length < 8) {
+                document.getElementById("message").innerHTML = "Password must be at least 8 characters long.";
+                return false;
+            }
+
+            // Check for at least one numeric character
+            if (!/\d/.test(password)) {
+                document.getElementById("message").innerHTML = "Password must contain at least one numeric character.";
+                return false;
+            }
+
+            // Reset error message
+            document.getElementById("message").innerHTML = "";
+
+            // Continue with form submission
+            return true;
+        }
+        function openNewPage() {
+    if (document.querySelector("#myForm").checkValidity()){
+    // Set the URL of the new webpage
+    var newPageUrl = './home.html'; // Replace with your desired URL
+
+    // Open the new webpage
+    window.location.href = newPageUrl;
+    }
+}
+    </script>
+</body>
+</html>

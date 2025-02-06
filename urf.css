@@ -1,0 +1,75 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 0;
+    background-color: #585555;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    justify-content: space-evenly;
+}
+
+.login-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    margin-left: 18px;
+}
+.MAP{
+    align-items: center;
+}
+.puk {
+    display: flex;
+}
+
+.login-container h2 {
+    text-align: center;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    margin-top: 15px;
+}
+
+
+input {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+
+}
+.puk button{
+    width: 80px;
+    
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+iframe{
+    margin-left:20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
