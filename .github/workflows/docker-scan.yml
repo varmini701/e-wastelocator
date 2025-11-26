@@ -10,24 +10,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout your source code
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # Step 2: Build the Docker image
       - name: Build Docker image
         run: docker build -t myimage:latest .
 
-      # Step 3: Install Trivy (scanner)
       - name: Install Trivy
-        uses: aquasecurity/setup-trivy@v0.10.0
+        uses: aquasecurity/setup-trivy@v1
 
-      # Step 4: Run a vulnerability scan
       - name: Scan Docker image
         run: |
           trivy image --format table myimage:latest > trivy-report.txt
 
-      # Step 5: Upload the report as an artifact
       - name: Upload scan report
         uses: actions/upload-artifact@v4
         with:
